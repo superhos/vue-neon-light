@@ -2,11 +2,11 @@
 
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-Neon Light plugin for Vue.js
+基于Vue.js霓虹灯插件
 
 ![img](https://raw.githubusercontent.com/superhos/vue-neon-light/master/screenshot/output.gif)
 
-GIF demo effect distortion,Please refer to the DEMO LIVE.
+GIF 效果失真, 实际效果请查看DEMO.
 
 [中文文档](/docs/zh/README.md)
 
@@ -14,14 +14,14 @@ GIF demo effect distortion,Please refer to the DEMO LIVE.
 
 [Demo](https://superhos.github.io/vue-neon-light/) >>>
 
-## Installation
+## 安装
 
-1) Install package via NPM
+1) 通过NPM安装
 
 ```bash
 npm i -S vue-neon-light
 ```
-2) Install plugin within project
+2) 在项目组件中调用
 
 ```javascript
 import VueNeonLight from 'vue-neon-light'
@@ -43,12 +43,12 @@ or
 <script src="./dist/vue-neon-light.js"></script>
 ```
 
-## Usage
+## 使用
 
-1) Import the font file
-I have provided two simple font file (\*.ttf) to you. One for the English (beon-webfont.ttf), the other one for the Chinese (bb1093.TTF). You can download the others font and use them which you perfer.
+1) 先引用字体文件
+我提供了两个字体文件例子(在font_sample)。一个是英文(beon-webfont.ttf)，一个是中文(bb1093.TTF)。你可以下载你喜欢的字体并使用。
 
-Copy font file into the `/public`.
+把字体文件复制到你项目中的 `/public` 文件夹.
 
 ```javascript
 import VueNeonLight from 'vue-neon-light'
@@ -69,7 +69,7 @@ export default {
 ```
 
 2)
-`fontFile` isnecessary.
+`fontFile` 是必须的.
 
 ```html
 <div id="app">
@@ -79,37 +79,37 @@ export default {
 </div>
 ```
 
-3) Already done
+3) 搞定
 
-Just two step, refresh and check the effect.
+就两步，刷新看看效果。
 
-## Plugin Options
+## 插件选项
 
 #### effect
 	- Default: `neon`
 	- Acceptable-Values: String
-	- Function: Only support `neon` currently.
+	- Function: 目前只支持 `neon`.
 
 #### color
 	- Default: `#ff00ff`
 	- Acceptable-Values: String
-	- Function: The color setting of the Font.
+	- Function: 霓虹灯的颜色.
 
 #### fontFile
 	- Default: `null`
 	- Acceptable-Values: String
-	- Function: The file of the font file.
+	- Function: 字体文件路径.
 
 #### flash
 	- Default: `false`
 	- Acceptable-Values: Boolean
-	- Function: If `ture`, the letter will flash in random.
+	- Function: 如果是 `ture`, 字体会随机闪烁.
 
 ## Log
 
 #### Version 0.0.1
-- Realized the basic functionality.
+- 实现基本功能.
 
 #### Version 1.0.6
-- Performance improvement.
-- Bug Fixed.
+- 性能优化.
+- Bug fixed.
