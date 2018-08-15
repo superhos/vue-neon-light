@@ -24,20 +24,23 @@ npm i -S vue-neon-light
 2) Install plugin within project
 
 ```javascript
-import Vue from 'vue'
-import vueBaberrage from 'vue-baberrage'
-Vue.use(vueBaberrage);
+import VueNeonLight from 'vue-neon-light'
+
+// In Vue Component
+components:{
+  VueNeonLight
+}
 ```
 or
 
 ```javascript
-const vueBaberrage = request('vue-baberrage');
+const VueNeonLight = request('vue-neon-light');
 ```
 
 or
 
 ```html
-<script src="./dist/vue-baberrage.js"></script>
+<script src="./dist/vue-neon-light.js"></script>
 ```
 
 ## Usage
