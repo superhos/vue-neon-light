@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <VueNeonLight :fontFile="font" :flash="true" style="margin-bottom:15px">霓虹灯效果</VueNeonLight>
-    <VueNeonLight color="#ecf554" :flash="true">Sevens Chan</VueNeonLight>
-    <VueNeonLight :flash="true" color="#00ced1">Vue Neon Light</VueNeonLight>
+    <VueNeonLight :fontFile="cnfont" :flash="true" style="margin-bottom:15px">霓虹灯效果</VueNeonLight>
+    <VueNeonLight :fontFile="enfont"color="#ecf554" :flash="true">Sevens Chan</VueNeonLight>
+    <VueNeonLight :fontFile="enfont" :flash="true" color="#00ced1">Vue Neon Light</VueNeonLight>
   </div>
 </template>
 
 <script>
 import VueNeonLight from './lib/vue-neon-light.vue'
-import fontpath from '../public/bb1093.TTF'
+import cnfontpath from '../font_sample/bb1093.TTF'
+import enfontpath from '../font_sample/beon-webfont.ttf'
+
 export default {
   name: 'app',
   components: {
@@ -16,7 +18,8 @@ export default {
   },
   data(){
     return {
-      font: fontpath
+      cnfont: cnfontpath,
+      enfont: enfontpath
     }
   }
 }

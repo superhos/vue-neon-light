@@ -22,8 +22,6 @@
 
 <script>
 import TextToSVG from 'text-to-svg'
-import cnFontPath from '../font/bb1093.TTF'
-import enFontPath from '../font/beon-webfont.ttf'
 import props from '../props'
 
 export default {
@@ -37,33 +35,33 @@ export default {
       words: '',
       lang: 'en',
       svgStyle: {
-        
+        boxSizing: 'border-box',
       }
     };
   },
   mounted(){
-    this.words = this.$slots.default[0].text;
-    this.lang = this.isCHN(this.words)?'cn':'en';
-
-    this.svgStyle.boxSizing = 'border-box';
-
-    // init font file
-    let fontPath;
-    if (this.fontFile){
-      fontPath = this.fontFile;
-    }else{
-      fontPath = this.lang === 'en'?enFontPath:cnFontPath
+    // Check
+    if (!this.fontFile){
+      throw new Error(`Property 'fontFile' is necessary.`);
     }
 
+    // Get the content
+    this.words = this.$slots.default[0].text;
+    // Check the Language
+    this.lang = this.isCHN(this.words)?'cn':'en';
+
     let _this = this;
-    const textToSVG = TextToSVG.load(fontPath,function(err,textToSVG){
+    const textToSVG = TextToSVG.load(this.fontFile,function(err,textToSVG){
+      // Divide to single letter
       for (const i in _this.words){
+        // Setting
         const options = {x: _this.width + 10, y: 0, anchor: 'left top'};
         let svg = textToSVG.getSVG(_this.words[i],options);
         let matchs = svg.match(/(?<=").*?(?=")/g);
-        _this.width += parseInt(matchs[4]);//Math.max(_this.width, parseInt(matchs[4]));
+        _this.width += parseInt(matchs[4]);
         _this.height = (_this.lang === 'cn'?Math.max(_this.height, parseInt(matchs[6])):parseInt(matchs[6]));
         let path = svg.match(/\<path\s*(.*?)\/\>/g)[0];
+        // if flash
         if (_this.flash){
           path = path.replace('<path ',`<path ${_this.$options._scopeId} class="random${Math.round(Math.random()*10)+1}"`)
         }
@@ -73,13 +71,6 @@ export default {
     })
   },
   methods:{
-    getSpace(num){
-      let result = "";
-      for (let i = 0; i < num ; i++){
-        result += "   ";
-      }
-      return result;
-    },
     isCHN(val){
         const regchn = new RegExp("[\\u4E00-\\u9FFF]+","g");
         return regchn.test(val);
@@ -91,20 +82,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 $black: #000;
-// Resets
-body {
-  background: $black;
-  margin: 0 auto;
-  text-align: center;
-  padding: 5em;
-}
-
-#OTM-Logo {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-  filter: url(#glow);
-}
 
 // Animation Classes
 .fade {

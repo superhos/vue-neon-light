@@ -33,7 +33,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        include:[
+          path.resolve(__dirname, 'src'),
+          path.resolve(__dirname, 'node_modules/opentype.js')
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -76,13 +79,13 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   test: /\.js($|\?)/i,
-    //   sourceMap: true,
-    //   uglifyOptions: {
-    //       compress: true
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      test: /\.js($|\?)/i,
+      sourceMap: true,
+      uglifyOptions: {
+          compress: true
+      }
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
