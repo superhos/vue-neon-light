@@ -41,7 +41,13 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+          test: /\.(ttf|eot|svg|TTF)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'file-loader'
       }
+      // { test: /\.TTF$/, loader: 'ignore-loader' },
+      // { test: /\.ttf$/, loader: 'ignore-loader' }
     ]
   },
   resolve: {
@@ -70,12 +76,13 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   test: /\.js($|\?)/i,
+    //   sourceMap: true,
+    //   uglifyOptions: {
+    //       compress: true
+    //   }
+    // }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
