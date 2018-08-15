@@ -71,11 +71,23 @@ export default {
 2)
 `fontFile` isnecessary.
 
+vue mode:
+
 ```html
 <div id="app">
   <VueNeonLight :fontFile= "font">
     Hello Sevens
   </VueNeonLight>
+</div>
+```
+
+or in script inject mode:
+
+```html
+<div id="app">
+  <vue-neon-light :font-file= "font">
+    Hello Sevens
+  </vue-neon-light>
 </div>
 ```
 

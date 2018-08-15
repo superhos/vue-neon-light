@@ -71,11 +71,23 @@ export default {
 2)
 `fontFile` 是必须的.
 
+Vue单组件模式(\*.vue):
+
 ```html
 <div id="app">
   <VueNeonLight :fontFile= "font">
     Hello Sevens
   </VueNeonLight>
+</div>
+```
+
+<script>引入模式:
+
+```html
+<div id="app">
+  <vue-neon-light :font-file= "font">
+    Hello Sevens
+  </vue-neon-light>
 </div>
 ```
 
