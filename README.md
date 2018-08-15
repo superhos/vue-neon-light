@@ -5,8 +5,14 @@
 Neon Light plugin for Vue.js
 
 ![img](https://raw.githubusercontent.com/superhos/vue-neon-light/master/screenshot/output.gif)
-(GIF demo effect distortion)
+
+GIF demo effect distortion,Please refer to the DEMO LIVE.
+
 [中文文档](/docs/zh/README.md)
+
+## DEMO Live
+
+[Demo](https://superhos.github.io/vue-neon-light/) >>>
 
 ## Installation
 
