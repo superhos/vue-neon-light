@@ -45,51 +45,43 @@ or
 
 ## Usage
 
-1) Template
-`isShow` and `barrageList` are necessary.
+1) Import the font file
+I have provided two simple font file (\*.ttf) to you. One for the English (beon-webfont.ttf), the other one for the Chinese (bb1093.TTF). You can use the font file which you perfer.
+
+Copy font file into the `/public`.
+
+```javascript
+import VueNeonLight from 'vue-neon-light'
+import fontPath from '../public/beon-webfont.ttf'
+
+// Setting path as a variable.
+export default {
+  name: 'app',
+  components: {
+    VueNeonLight
+  },
+  data(){
+    return {
+      font: fontPath
+    }
+  }
+}
+```
+
+2)
+`fontFile` isnecessary.
 
 ```html
 <div id="app">
-<vue-baberrage
-      :isShow= "barrageIsShow"
-      :barrageList = "barrageList"
-      :loop = "barrageLoop"
-      >
-    </vue-baberrage>
+  <VueNeonLight :fontFile= "font">
+    Hello Sevens
+  </VueNeonLight>
 </div>
-```
-
-2) Script
-
-```javascript
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Hello vue-baberrage',
-      barrageIsShow: true,
-      currentId : 0,
-      barrageLoop: false,
-      barrageList: []
-    }
-  },  
-  methods:{
-    addToList (){
-      this.barrageList.push({
-        id: ++this.currentId,
-        avatar: "./static/avatar.jpg",
-        msg: this.msg,
-        // barrageStyle: "normal",
-        time: 5,
-        type: 0,
-        position: 'bottom'
-      });
-  ...
 ```
 
 3) Already done
 
-Just two step, and add new barrage message by pushing data into the `barrageList`. You needn't concern about the management of the barrageList, it will be handled by vue-baberrage. Suggest the `barrageList` store into the Vuex.
+Just two step, refresh and check the effect.
 
 ## Plugin Options
 

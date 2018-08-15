@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/lib/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: 'dist/',
     // filename: 'build.js',
     filename: 'vue-neon-light.js',
     library: 'vue-neon-light',
