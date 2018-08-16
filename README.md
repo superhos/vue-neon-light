@@ -45,7 +45,7 @@ or
 
 ## Usage
 
-1) Import the font file
+1. Import the font file
 I have provided two simple font file (\*.ttf) to you. One for the English (beon-webfont.ttf), the other one for the Chinese (bb1093.TTF). You can download the others font and use them which you perfer.
 
 Copy font file into the `/public`.
@@ -68,8 +68,7 @@ export default {
 }
 ```
 
-2)
-`fontFile` isnecessary.
+2. `fontFile` isnecessary.
 
 vue mode:
 
@@ -91,7 +90,7 @@ or in script inject mode:
 </div>
 ```
 
-3) Already done
+3. Already done
 
 Just two step, refresh and check the effect.
 
