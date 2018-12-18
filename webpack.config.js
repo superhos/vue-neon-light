@@ -2,16 +2,16 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  // entry: './src/main.js',
-  entry: './src/lib/index.js',
+  entry: './src/main.js',
+  // entry: './src/lib/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: 'dist/',
-    // filename: 'build.js',
-    filename: 'vue-neon-light.js',
-    library: 'vue-neon-light',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    filename: 'build.js',
+    // filename: 'vue-neon-light.js',
+    // library: 'vue-neon-light',
+    // libraryTarget: 'umd',
+    // umdNamedDefine: true
   },
   module: {
     rules: [

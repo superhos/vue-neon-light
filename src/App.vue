@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <VueNeonLight :fontFile="cnfont" :flash="true" style="margin-bottom:15px">霓虹灯效果</VueNeonLight>
-    <VueNeonLight :fontFile="enfont"color="#ecf554" :flash="true">Sevens Chan</VueNeonLight>
-    <VueNeonLight :fontFile="enfont" :flash="true" color="#00ced1">Vue Neon Light</VueNeonLight>
+    <VueNeonLight :fontFile="enfont" color="#ecf554" :flash="true">Sevens Chan</VueNeonLight>
+    <VueNeonLight :fontFile="enfont" :flash="true" color="#00ced1">HELLO WORLD!</VueNeonLight>
   </div>
 </template>
 

@@ -1,5 +1,7 @@
 .DS_Store
 node_modules/
+.history/
+dist/
 npm-debug.log
 yarn-error.log
 package-lock.json

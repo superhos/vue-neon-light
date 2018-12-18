@@ -50,24 +50,24 @@ export default {
     // Check the Language
     this.lang = this.isCHN(this.words)?'cn':'en';
 
-    let _this = this;
-    const textToSVG = TextToSVG.load(this.fontFile,function(err,textToSVG){
+    const textToSVG = TextToSVG.load(this.fontFile,(err,textToSVG) => {
       // Divide to single letter
-      for (const i in _this.words){
+      this.words.split('').forEach(word => {
         // Setting
-        const options = {x: _this.width + 10, y: 0, anchor: 'left top'};
-        let svg = textToSVG.getSVG(_this.words[i],options);
+        const options = {x: this.width + 10, y: 0, anchor: 'left top'};
+        let svg = textToSVG.getSVG(word,options);
         let matchs = svg.match(/(?<=").*?(?=")/g);
-        _this.width += parseInt(matchs[4]);
-        _this.height = (_this.lang === 'cn'?Math.max(_this.height, parseInt(matchs[6])):parseInt(matchs[6]));
+        this.width += parseInt(matchs[4]);
+        this.height = (this.lang === 'cn'?Math.max(this.height, parseInt(matchs[6])):parseInt(matchs[6]));
         let path = svg.match(/\<path\s*(.*?)\/\>/g)[0];
         // if flash
-        if (_this.flash){
-          path = path.replace('<path ',`<path ${_this.$options._scopeId} class="random${Math.round(Math.random()*10)+1}"`)
+        if (this.flash){
+          path = path.replace('<path ',`<path ${this.$options._scopeId} class="random${Math.round(Math.random()*10)+1}"`)
         }
-        _this.inside += path;
-      }
-      _this.width += 20;
+        this.inside += path;
+        // this.width += 3;
+      })
+      this.width += 12;
     })
   },
   methods:{
